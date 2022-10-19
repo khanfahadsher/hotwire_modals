@@ -7,7 +7,7 @@
   </div>
   <div class="mt-5 md:col-span-2 md:mt-0" data-controller='personal'>
     <%= form_with(model: personal, class: "personal_contents",
-      html: { data: { controller: "turbo_modal", action: 'turbo-modal#validate' } }) do |f| %>
+      html: { data: { controller: "turbo_modal", action: 'turbo-modal#personal_validate' } }) do |f| %>
       <% if @personal.errors.any? %>
         <ul>
           <% @personal.errors.full_messages.each do |message| %>
@@ -21,13 +21,13 @@
             <div class="col-span-6 sm:col-span-3">
               <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
               <%= f.text_field :first_name, type:"text", name:"personal[first_name]", id:"first-name", autocomplete:"given-name", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
-              <span id="first_name_error" type="hidden"> </span>
+              <span id="first_name_error"> </span>
             </div>
 
             <div class="col-span-6 sm:col-span-3">
               <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
               <%= f.text_field :last_name, type:"text", name:"personal[last_name]", id:"last-name", autocomplete:"given-name", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
-              <span id="last_name_error" type="hidden"> </span>
+              <span id="last_name_error"> </span>
             </div>
 
             <div class="col-span-6 sm:col-span-3">
@@ -38,13 +38,13 @@
             <div class="col-span-6 sm:col-span-4">
               <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
               <%= f.text_field :email_address, type:"text", name:"personal[email_address]", id:"email-address", autocomplete:"email-address", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
-              <span id="email_error" type="hidden"> </span>
+              <span id="email_error"> </span>
             </div>
 
             <div class="col-span-6 sm:col-span-4">
               <label for="phone-number" class="block text-sm font-medium text-gray-700">Phone Number</label>
               <%= f.text_field :phone_number, type:"tel", name:"personal[phone_number]", id:"phone-number", autocomplete:"phone-number", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm",  placeholder:'xxx-xxx-xxxx', pattern:"[0-9]{3}-[0-9]{3}-[0-9]{3}" %>
-              <span id="phone_error" type="hidden"> </span>
+              <span id="phone_error"> </span>
             </div>
 
         </div>
