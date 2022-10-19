@@ -1,0 +1,7 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <%= turbo_frame_tag "modal" do %>
+    <%= tag.div data: { controller: "turbo-modal" }, style: "padding: 30px;" do %>
+      <%= render "form", employment: @employment %>
+    <% end %>
+  <% end %> 
+</div>

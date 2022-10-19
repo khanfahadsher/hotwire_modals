@@ -1,0 +1,32 @@
+<div id="<%= dom_id personal %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First name:</strong>
+    <%= personal.first_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last name:</strong>
+    <%= personal.last_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Nick name:</strong>
+    <%= personal.nick_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email address:</strong>
+    <%= personal.email_address %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone number:</strong>
+    <%= personal.phone_number %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this personal", personal, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this personal', edit_personal_path(personal), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
