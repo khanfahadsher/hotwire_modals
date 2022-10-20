@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It is a single-page application. With Personal and Employment information.
 
-Things you may want to cover:
+Technologies:
+The languages,libraries, and versions which are used as follows:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+. Rails 7
+. SLIM
+. Hotwire
+. Stimulus
+. TurboFrames
+. Tailwind
+. MySQL
+. RSpec
+. Faker
+To clone project in your local machine, run the following commands,
+$ git clone https://github.com/khanfahadsher/hotwire_modals
+bundle install
+rails tailwindcss:build
+./bin/dev
