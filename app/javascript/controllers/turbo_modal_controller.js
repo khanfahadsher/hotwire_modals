@@ -1,11 +1,17 @@
 import { Controller } from "@hotwired/stimulus"
 
+
 // Connects to data-controller="turbo-modal"
 export default class extends Controller {
 
   static targets = ['personal', 'form']
 
   connect () {
+    var phone_number = document.getElementById('phone-number')
+    var maskOptions = {
+      mask: '000-000-0000'
+    };
+    var mask = IMask(phone_number, maskOptions);
     this.element.addEventListener("turbo:submit-start", e => this.personal_validate(e))
     this.element.addEventListener("turbo:submit-start", e => this.employment_validate(e))
   }
