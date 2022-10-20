@@ -7,13 +7,25 @@ export default class extends Controller {
   static targets = ['personal', 'form']
 
   connect () {
+   
+    this.element.addEventListener("turbo:submit-start", e => this.personal_validate(e))
+    this.element.addEventListener("turbo:submit-start", e => this.employment_validate(e))
+    $( "#date-started" ).datepicker();
+    $( "#date-employment-ended" ).datepicker();
     var phone_number = document.getElementById('phone-number')
     var maskOptions = {
       mask: '000-000-0000'
     };
     var mask = IMask(phone_number, maskOptions);
-    this.element.addEventListener("turbo:submit-start", e => this.personal_validate(e))
-    this.element.addEventListener("turbo:submit-start", e => this.employment_validate(e))
+    
+  }
+
+  date_started_provider () {
+    $( "#date-started" ).datepicker();
+  }
+
+  date_ending_provider () {
+    $( "#date-employment-ended" ).datepicker();
   }
 
   personal_validate (event) {

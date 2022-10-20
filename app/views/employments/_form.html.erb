@@ -20,13 +20,13 @@
 
           <div class="col-span-6 sm:col-span-3">
             <label for="date-started" class="block text-sm font-medium text-gray-700">Date Started</label>
-            <%= f.text_field :date_started, "data-provide" => 'datepicker', name:"employment[date_started]", id:"date-started", autocomplete:"given-name", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+            <%= f.text_field :date_started, type:"text", data: { action: "focus->turbo-modal#date_started_provider"}, "data-provide" => 'datepicker', name:"employment[date_started]", id:"date-started", autocomplete:"given-name", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
             <span id="date_started_error"> </span>
           </div>
 
           <div class="col-span-6 sm:col-span-3">
             <label for="date-employment-ended" class="block text-sm font-medium text-gray-700">Date Employment Ended</label>
-            <%= f.text_field :date_employment_ended, type:"text", name:"employment[date_employment_ended]", id:"date-employment-ended", autocomplete:"given-name", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+            <%= f.text_field :date_employment_ended, type:"text", data: { action: "focus->turbo-modal#date_ending_provider"}, name:"employment[date_employment_ended]", id:"date-employment-ended", autocomplete:"given-name", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
             <span id="date_ended_error"> </span>
           </div>
 

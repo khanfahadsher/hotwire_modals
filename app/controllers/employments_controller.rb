@@ -21,8 +21,7 @@ class EmploymentsController < ApplicationController
 
   # POST /employments or /employments.json
   def create
-    @employment = Employment.new(employment_params)
-
+    @employment = Employment.new(employer: employment_params['employer'], date_started: DateTime.strptime(employment_params["date_started"],"%m/%d/%Y"), date_employment_ended: DateTime.strptime(employment_params["date_employment_ended"],"%m/%d/%Y"))
     respond_to do |format|
       if @employment.save
         format.html { redirect_to employment_url(@employment), notice: "Employment was successfully created." }
