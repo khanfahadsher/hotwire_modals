@@ -19,31 +19,31 @@
         <div class="bg-white px-4 py-5 sm:p-6">
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-3">
-              <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
-              <%= f.text_field :first_name, type:"text", name:"personal[first_name]", id:"first-name", autocomplete:"given-name", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+              <label for="first-name" class="block text-sm font-medium text-gray-700 required">First name</label>
+              <%= f.text_field :first_name, type:"text", name:"personal[first_name]", id:"first-name", autocomplete:"off", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
               <span id="first_name_error"> </span>
             </div>
 
             <div class="col-span-6 sm:col-span-3">
-              <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
-              <%= f.text_field :last_name, type:"text", name:"personal[last_name]", id:"last-name", autocomplete:"given-name", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+              <label for="last-name" class="block text-sm font-medium text-gray-700 required">Last name</label>
+              <%= f.text_field :last_name, type:"text", name:"personal[last_name]", id:"last-name", autocomplete:"off", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
               <span id="last_name_error"> </span>
             </div>
 
             <div class="col-span-6 sm:col-span-3">
               <label for="nick-name" class="block text-sm font-medium text-gray-700">Nick name</label>
-              <%= f.text_field :nick_name, type:"text", name:"personal[nick_name]", id:"nick-name", autocomplete:"given-name", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+              <%= f.text_field :nick_name, type:"text", name:"personal[nick_name]", id:"nick-name", autocomplete:"off", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-              <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
-              <%= f.text_field :email_address, type:"text", name:"personal[email_address]", id:"email-address", autocomplete:"email-address", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+              <label for="email-address" class="block text-sm font-medium text-gray-700 required">Email address</label>
+              <%= f.text_field :email_address, type:"text", name:"personal[email_address]", id:"email-address", autocomplete:"off", data: { action: "change->turbo-modal#email_validate"}, class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
               <span id="email_error"> </span>
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-              <label for="phone-number" class="block text-sm font-medium text-gray-700">Phone Number</label>
-              <%= f.text_field :phone_number, type:"tel", name:"personal[phone_number]", id:"phone-number", autocomplete:"phone-number", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm",  placeholder:'xxx-xxx-xxxx' %>
+              <label for="phone-number" class="block text-sm font-medium text-gray-700 required">Phone Number</label>
+              <%= f.text_field :phone_number, type:"tel", name:"personal[phone_number]", id:"phone-number", autocomplete:"off", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm",  placeholder:'xxx-xxx-xxxx', size:"10" %>
               <span id="phone_error"> </span>
             </div>
 
