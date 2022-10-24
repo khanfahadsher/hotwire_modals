@@ -76,3 +76,6 @@ group :test do
 end
 
 gem 'inputmask-rails'
+gem 'slim'
+gem 'slim-rails'
+gem 'html2slim'

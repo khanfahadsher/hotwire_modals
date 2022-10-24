@@ -1,0 +1,27 @@
+| <div id="
+= dom_id personal
+| "> 
+p.my-5
+  strong.block.font-medium.mb-1
+    | First name:
+  = personal.first_name
+p.my-5
+  strong.block.font-medium.mb-1
+    | Last name:
+  = personal.last_name
+p.my-5
+  strong.block.font-medium.mb-1
+    | Nick name:
+  = personal.nick_name
+p.my-5
+  strong.block.font-medium.mb-1
+    | Email address:
+  = personal.email_address
+p.my-5
+  strong.block.font-medium.mb-1
+    | Phone number:
+  = personal.phone_number
+- if action_name != "show"
+  = link_to "Show this personal", personal, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+  = link_to 'Edit this personal', edit_personal_path(personal), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+  hr.mt-6

@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title
+      | HotwireModal
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+    script[src="https://unpkg.com/imask"]
+    link[rel="stylesheet" href="https://ga.jspm.io/npm:flatpickr@4.6.9/dist/flatpickr.min.css"]
+    link[rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"]
+    link[rel="stylesheet" href="/resources/demos/style.css"]
+    script[src="https://code.jquery.com/jquery-3.6.0.js"]
+    script[src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"]
+  body
+    main.container.mx-auto.mt-28.px-5.flex
+      = turbo_frame_tag "modal"
+      = yield

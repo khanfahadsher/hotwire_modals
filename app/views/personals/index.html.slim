@@ -1,0 +1,14 @@
+.hidden.sm:block[aria-hidden="true"]
+  .py-5
+    .border-t.border-gray-200
+.mt-10.sm:mt-0
+  .md:grid.md:grid-cols-3.md:gap-6
+    .md:col-span-1
+      .px-4.sm:px-0
+        h3.text-lg.font-medium.leading-6.text-gray-900
+          | Employment Personal Information
+    .mt-5.md:col-span-2.md:mt-0
+      .bg-gray-50.px-4.py-3.text-left.sm:px-6
+        = link_to "Personal", new_personal_path, data: { turbo_frame: 'modal' }, class:"inline-flex justify-left rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      .bg-gray-50.px-4.py-3.text-left.sm:px-6
+        = link_to "Employment", new_employment_path, data: { turbo_frame: 'modal' }, class:"inline-flex justify-left rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"

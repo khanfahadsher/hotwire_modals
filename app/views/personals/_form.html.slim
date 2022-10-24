@@ -1,0 +1,48 @@
+.md:grid.md:grid-cols-3.md:gap-6
+  .md:col-span-1
+    .px-4.sm:px-0
+      h3.text-lg.font-medium.leading-6.text-gray-900
+        | Personal
+      p.mt-1.text-sm.text-gray-600
+        | Use a permanent address where you can receive mail.
+  .mt-5.md:col-span-2.md:mt-0[data-controller="personal"]
+    = form_with(model: personal, class: "personal_contents",
+        data: { controller: "turbo_modal", action: 'turbo-modal#personal_validate' }) do |f|
+      .overflow-hidden.shadow.sm:rounded-md
+        .bg-white.px-4.py-5.sm:p-6
+          .grid.grid-cols-6.gap-6
+            .col-span-6.sm:col-span-3
+              label.block.text-sm.font-medium.text-gray-700.required[for="first-name"]
+                | First name
+              = f.text_field :first_name, type:"text", name:"personal[first_name]", id:"first-name", autocomplete:"off", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              span#first_name_error
+
+            .col-span-6.sm:col-span-3
+              label.block.text-sm.font-medium.text-gray-700.required[for="last-name"]
+                | Last name
+              = f.text_field :last_name, type:"text", name:"personal[last_name]", id:"last-name", autocomplete:"off", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              span#last_name_error
+
+            .col-span-6.sm:col-span-3
+              label.block.text-sm.font-medium.text-gray-700[for="nick-name"]
+                | Nick name
+              = f.text_field :nick_name, type:"text", name:"personal[nick_name]", id:"nick-name", autocomplete:"off", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            .col-span-6.sm:col-span-4
+              label.block.text-sm.font-medium.text-gray-700.required[for="email-address"]
+                | Email address
+              = f.text_field :email_address, type:"text", name:"personal[email_address]", id:"email-address", autocomplete:"off", data: { action: "change->turbo-modal#email_validate"}, class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              span#email_error
+
+            .col-span-6.sm:col-span-4
+              label.block.text-sm.font-medium.text-gray-700.required[for="phone-number"]
+                | Phone Number
+              = f.text_field :phone_number, type:"tel", name:"personal[phone_number]", id:"phone-number", autocomplete:"off", class:"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm",  placeholder:'xxx-xxx-xxxx', size:"10"
+              span#phone_error
+
+          .bg-gray-50.px-4.py-3.text-right.sm:px-6
+            = f.submit "Save Personal", class:"inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          .bg-gray-50.px-4.py-3.text-left.sm:px-6
+            = button_tag "Cancel", data: { action: "turbo-modal#hideModal" }, type: "button", class: "inline-flex justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
+.hidden.sm:block[aria-hidden="true"]
+  .py-5
+    .border-t.border-gray-200
