@@ -11,10 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_18_121543) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "employments", force: :cascade do |t|
+  create_table "employments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "employer"
     t.datetime "date_started"
     t.datetime "date_employment_ended"
@@ -22,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_121543) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "personals", force: :cascade do |t|
+  create_table "personals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "nick_name"
